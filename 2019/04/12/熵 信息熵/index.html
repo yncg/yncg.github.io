@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="信息熵">
+<meta property="og:url" content="http://yoursite.com/2019/04/12/熵 信息熵/index.html">
+<meta property="og:site_name" content="云南虫谷">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image001.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image002.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image003.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image004.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image005.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image006.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image007.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image009.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image011.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image013.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image015.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image016.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image017.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image018.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image019.jpg">
+<meta property="og:updated_time" content="2019-04-12T10:39:26.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信息熵">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/12/熵%20信息熵/熵%20信息熵.files/image001.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/04/12/熵 信息熵/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>信息熵 | 云南虫谷</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云南虫谷</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/熵 信息熵/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YG201506"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云南虫谷"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信息熵
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 18:22:38 / 修改时间：18:39:26" itemprop="dateCreated datePublished" datetime="2019-04-12T18:22:38+08:00">2019-04-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/12/熵 信息熵/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/12/熵 信息熵/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+
+<a id="more"></a>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 14">
+<meta name="Originator" content="Microsoft Word 14">
+<link rel="File-List" href="熵%20信息熵.files/filelist.xml">
+<link rel="Edit-Time-Data" href="熵%20信息熵.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Win-Fei</o:Author>
+  <o:LastAuthor>Win-Fei</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>12</o:TotalTime>
+  <o:Created>2019-04-12T10:22:00Z</o:Created>
+  <o:LastSaved>2019-04-12T10:22:00Z</o:LastSaved>
+  <o:Pages>13</o:Pages>
+  <o:Words>547</o:Words>
+  <o:Characters>3122</o:Characters>
+  <o:Lines>26</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3662</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel="themeData" href="熵%20信息熵.files/themedata.thmx">
+<link rel="colorSchemeMapping" href="熵%20信息熵.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536858881 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 718224464 22 0 262175 0;}
+@font-face
+	{font-family:"\@微软雅黑";
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 718224464 22 0 262175 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 2 Char";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;
+	font-weight:bold;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 2";
+	mso-ansi-font-size:18.0pt;
+	mso-bidi-font-size:18.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;
+	mso-font-kerning:0pt;
+	font-weight:bold;}
+p.author-name, li.author-name, div.author-name
+	{mso-style-name:author-name;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.date
+	{mso-style-name:date;
+	mso-style-unhide:no;}
+span.time
+	{mso-style-name:time;
+	mso-style-unhide:no;}
+span.bjh-p
+	{mso-style-name:bjh-p;
+	mso-style-unhide:no;}
+span.bjh-h3
+	{mso-style-name:bjh-h3;
+	mso-style-unhide:no;}
+span.bjh-strong
+	{mso-style-name:bjh-strong;
+	mso-style-unhide:no;}
+span.Char
+	{mso-style-name:"批注框文本 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:批注框文本;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang="ZH-CN" style="tab-interval:21.0pt;text-justify-trim:punctuation">
+
+<div class="WordSection1" style="layout-grid:15.6pt">
+
+<p class="MsoNormal" align="left" style="text-align:left;line-height:30.0pt;
+mso-pagination:widow-orphan;mso-outline-level:2;background:white"><b><span style="font-size:21.0pt;font-family:" 微软雅黑","sans-serif";mso-bidi-font-family: arial;color:black;mso-font-kerning:0pt">什么是熵？<span lang="EN-US"><o:p></o:p></span></span></b></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_15" o:spid="_x0000_i1039" type="#_x0000_t75"
+ alt="说明: https://timg01.bdimg.com/timg?pa=&amp;imgtype=0&amp;sec=1439619614&amp;di=8520891da7e6b71fff0ab2598c84b52f&amp;quality=90&amp;size=b870_10000&amp;src=http%3A%2F%2Fpic.rmb.bdstatic.com%2Fe149259c0a1ba1b7832a6d299fc2b339.jpeg"
+ style='width:225pt;height:225pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image001.jpg" o:title="timg?pa=&amp;imgtype=0&amp;sec=1439619614&amp;di=8520891da7e6b71fff0ab2598c84b52f&amp;quality=90&amp;size=b870_10000&amp;src=http%3A%2F%2Fpic.rmb.bdstatic.com%2Fe149259c0a1ba1b7832a6d299fc2b339"/>
+</v:shape><![endif]--><![if !vml]><img width="300" height="300" src="熵%20信息熵.files/image001.jpg" alt="说明: https://timg01.bdimg.com/timg?pa=&amp;imgtype=0&amp;sec=1439619614&amp;di=8520891da7e6b71fff0ab2598c84b52f&amp;quality=90&amp;size=b870_10000&amp;src=http%3A%2F%2Fpic.rmb.bdstatic.com%2Fe149259c0a1ba1b7832a6d299fc2b339.jpeg" v:shapes="图片_x0020_15"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span style="font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:Arial;color:#3388FF;
+mso-font-kerning:0pt">雷锋网</span><span lang="EN-US" style="font-size:10.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#3388ff; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:10.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:#999999;mso-font-kerning:0pt">18-10-3117:21</span><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:18.0pt;mso-pagination:widow-orphan;
+background:white"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:Arial;color:#333333;
+mso-font-kerning:0pt">雷锋网</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"> AI </span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">科技评论按：「熵」大概是统计学、信息学里最让初学者愁肠百结的基本概念之一。我们都知道<span class="GramE">熵</span>可以用来描述含有的信息丰富程度的多少，但是具体是怎么回事呢？这篇文章中雷锋网</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> AI </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">科技评论将带大家重新系统认识一下「熵」倒是在讲什么。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_14" o:spid="_x0000_i1038" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=597363446,1105027815&amp;fm=173&amp;app=49&amp;f=JPEG?w=639&amp;h=260&amp;s=0AA87A23DF807B535E5500DE0100C0B0"
+ style='width:479.25pt;height:195pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image002.jpg" o:title="u=597363446,1105027815&amp;fm=173&amp;app=49&amp;f=JPEG?w=639&amp;h=260&amp;s=0AA87A23DF807B535E5500DE0100C0B0"/>
+</v:shape><![endif]--><![if !vml]><img width="639" height="260" src="熵%20信息熵.files/image002.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=597363446,1105027815&amp;fm=173&amp;app=49&amp;f=JPEG?w=639&amp;h=260&amp;s=0AA87A23DF807B535E5500DE0100C0B0" v:shapes="图片_x0020_14"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">假设你在医生办公室中与三个等待的病人交流。三个病人都刚刚完成药物测试，他们面临着两种可能的结果：患病或者未患病。假设这三个病人都充满好奇心而且数学好。他们提前各自研究得到了自己患病的风险，并且想通过这些来确认自己的诊断结果。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">知道他自己有</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 95% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的可能会患病。对于病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，患病概率为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 30%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> C </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的患病未患病的概率都为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 50%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_13" o:spid="_x0000_i1037" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2175145922,2064323516&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=434&amp;s=1C2274324537F23A14D195F002007031"
+ style='width:480pt;height:325.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image003.jpg" o:title="u=2175145922,2064323516&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=434&amp;s=1C2274324537F23A14D195F002007031"/>
+</v:shape><![endif]--><![if !vml]><img width="640" height="434" src="熵%20信息熵.files/image003.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2175145922,2064323516&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=434&amp;s=1C2274324537F23A14D195F002007031" v:shapes="图片_x0020_13"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">病房中的不确定性</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">首先我们专注于一个简单的问题。在其他条件都相同的情况下，这三个病人中的<span class="GramE">哪个面临</span>着最大的不确定性？</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">这个问题的答案是显而易见的，病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> C</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。他所面临的是在这种情况下可能<span class="GramE">呢存在</span>的最大程度的不确定性：就<span class="GramE">像医疗</span>版本的抛硬币试验一样。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">来说，虽然他的情况不容乐观，但是至少他对于是否患病这个问题有最小的不确定性。对于病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，他的不确定性在病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和病人</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> C </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">之间·····。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">这就是为什么要引入<span class="GramE">熵</span>这个概念的原因：描述一个状况下的不确定性为在</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">xx</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">xx</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">之间，在日常生活环境下这种精细程度可能足够了，但是对于机器学习任务来说，这种描述太宽泛了。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">不确定性度量</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span class="GramE"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">熵</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">允许我们对于生活中的一个重要问题：事情最终会发展到什么样的结果，进行精确度量和计算。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">换种说法，<span class="GramE">熵是一种</span>不确定性的度量。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">在本篇文章中，<span class="GramE">熵都是</span>指代香农熵（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">Shannon entropy</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）。其实还有几种其他类型的熵，但是在自然语言处理或者机器学习领域中，我们提到的<span class="GramE">熵都是</span>香农熵。</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">所以在没有特意说明的情况下，下面就是熵的公式。对于事件</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">X</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，有</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">n</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">种可能结果，且概率分别为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">p_1, ... <span class="SpellE">p_n</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，公式为：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_12" o:spid="_x0000_i1036" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=795938621,256356282&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=107&amp;s=1EAA7423CD275F305E5DA0D20000E0B1"
+ style='width:480pt;height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image004.jpg" o:title="u=795938621,256356282&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=107&amp;s=1EAA7423CD275F305E5DA0D20000E0B1"/>
+</v:shape><![endif]--><![if !vml]><img width="640" height="107" src="熵%20信息熵.files/image004.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=795938621,256356282&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=107&amp;s=1EAA7423CD275F305E5DA0D20000E0B1" v:shapes="图片_x0020_12"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">基本性质</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">如果你是第一次看到这个公式，你可能会提出一个问题：为什么要用对数？为什么这个公式就能够度量不确定性？当然，还有为什么要用字母</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">来表示熵？（表面上这个英文字母</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">是从希腊大写字母</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">Eta</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">上演变过来的，但实际上为什么采用了字母</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">来表示，还是有一段复杂的历史的，感兴趣的可以看这个问题：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">Why use H for entropy?)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于很多情况下的问题，我认为从以下两点切入是很好的选择：（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）我所面对的这个数学结构有那些理想的属性？（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）是否有其他结构也能够满足所有这些理想的属性？</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于香农熵作为不确定性的度量来说，这两个问题的答案分别是：（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）很多，（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）没有。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">我们来一个一个看我们希望熵的公式应该具有哪些性质。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">基本性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">1</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：均匀分布具有最大的不确定性</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">如果你的目标是减小不确定性，那么一定要远离均匀概率分布。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">简单回顾一下概率分布：概率分布是一个函数，对于每个可能的结果都有一个概率，且所有的概率相加等于</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。当所有可能的结果具有相同的可能性时，该分布为均匀分布。例如：抛硬币实验（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">50% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 50% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的概率），</span><span style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">均匀的骰子（每个面朝上的概率都为六分之一）。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_11" o:spid="_x0000_i1035" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=192165005,4148394503&amp;fm=173&amp;app=49&amp;f=JPEG?w=627&amp;h=463&amp;s=C4A23472E5237B3A42C501D1020050B2"
+ style='width:470.25pt;height:347.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image005.jpg" o:title="u=192165005,4148394503&amp;fm=173&amp;app=49&amp;f=JPEG?w=627&amp;h=463&amp;s=C4A23472E5237B3A42C501D1020050B2"/>
+</v:shape><![endif]--><![if !vml]><img width="627" height="463" src="熵%20信息熵.files/image005.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=192165005,4148394503&amp;fm=173&amp;app=49&amp;f=JPEG?w=627&amp;h=463&amp;s=C4A23472E5237B3A42C501D1020050B2" v:shapes="图片_x0020_11"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">均匀分布具有最大的熵</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">一个好的不确定性度量会在均匀分布时达到最大的值。<span class="GramE">熵</span>满足这个要求。给定</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"> n </span><span class="GramE"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">个</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">可能的结果，最大的熵在所有结果的概率相同时得到。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_10" o:spid="_x0000_i1034" type="#_x0000_t75" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2680105705,3475336744&amp;fm=173&amp;app=49&amp;f=JPEG?w=467&amp;h=160&amp;s=5BA43C6289A06C011E7C94CE0000A0B1"
+ style='width:350.25pt;height:120pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image006.jpg" o:title="u=2680105705,3475336744&amp;fm=173&amp;app=49&amp;f=JPEG?w=467&amp;h=160&amp;s=5BA43C6289A06C011E7C94CE0000A0B1"/>
+</v:shape><![endif]--><![if !vml]><img width="467" height="160" src="熵%20信息熵.files/image006.jpg" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2680105705,3475336744&amp;fm=173&amp;app=49&amp;f=JPEG?w=467&amp;h=160&amp;s=5BA43C6289A06C011E7C94CE0000A0B1" v:shapes="图片_x0020_10"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">下面是对于伯努利试验中熵的图像。（伯努利试验有两种可能的结果：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">p</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1-p</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_9" o:spid="_x0000_i1033" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3237247127,133775283&amp;fm=173&amp;app=49&amp;f=JPEG?w=325&amp;h=322&amp;s=20887832698E4CC8044870DA000080B3"
+ style='width:243.75pt;height:241.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image007.jpg" o:title="u=3237247127,133775283&amp;fm=173&amp;app=49&amp;f=JPEG?w=325&amp;h=322&amp;s=20887832698E4CC8044870DA000080B3"/>
+</v:shape><![endif]--><![if !vml]><img width="325" height="322" src="熵%20信息熵.files/image007.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3237247127,133775283&amp;fm=173&amp;app=49&amp;f=JPEG?w=325&amp;h=322&amp;s=20887832698E4CC8044870DA000080B3" v:shapes="图片_x0020_9"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">在伯努利试验中，当</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">p=0.5</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">时，熵达到最大</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">基本性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">2</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：对于独立事件，不确定性是可加的</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">假设</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">是独立事件。换句话讲，知道事件</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的结果并不会丝毫影响</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的结果。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">关于这两个事件的不确定性应该是两个事件单独的不确定性的和，这也是我们希望熵的公式应该具备的性质。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于独立事件，不确定性是可加的</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">让我们使用抛两个硬币的试验作为例子来使这个概念更加具体。我们既可以两个硬币同时抛，也可以先抛一个硬币再抛另一个硬币。在两种情况下，不确定性是相同的。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">考虑两个特殊的硬币，第一个硬币正面朝上</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> (H, Head) </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的概率为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">80%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，背面朝上</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> (T, Tail) </span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的概率为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 20%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。另一个硬币的正面朝上和反面朝上的概率分别为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 60% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 40%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。如果我们同时抛两枚硬币，那么有四种可能：正正，正反，反正，反<span class="GramE">反</span>。对应的概率分别为</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt">[0.48, 0.32, 0.12, 0.08]</span><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_i1032" type="#_x0000_t75" alt="说明: https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3237559227,4084166975&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=463&amp;s=6CA23473C537C03A184825CA0200A0B3"
+ style='width:332.25pt;height:240pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image008.jpg" o:title="u=3237559227,4084166975&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=463&amp;s=6CA23473C537C03A184825CA0200A0B3"/>
+</v:shape><![endif]--><![if !vml]><img width="443" height="320" src="熵%20信息熵.files/image009.jpg" alt="说明: https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3237559227,4084166975&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=463&amp;s=6CA23473C537C03A184825CA0200A0B3" v:shapes="图片_x0020_8"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">两个独立事件的联合<span class="GramE">熵</span>等于独立事件的熵的<span class="GramE">和</span></span><span lang="EN-US" style="font-size:12.0pt;font-family:
+" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333;mso-font-kerning: 0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">将这些概率带入到熵的公式中，我们能够看到：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">就跟我们设想的一样，两个独立事件的联合<span class="GramE">熵</span>等于各个独立事件的熵的<span class="GramE">和</span>。</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">基本性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">3</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：加入发生概率为</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">0</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">的结果并不会有影响</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">假设有一个游戏，获胜条件如下：（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">a</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）只要</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果出现，你就赢了。（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">b</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）你可以在两个概率分布</span><span style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> <span lang="EN-US">A </span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">中选一个进行游戏。分布</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">有两种可能，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 80% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">概率，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 20% </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">概率。分布</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">有三种结果，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">80%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">20%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">#3</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">号结果</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0%.<o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_i1031" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2476489382,2247371634&amp;fm=173&amp;app=49&amp;f=JPEG?w=634&amp;h=466&amp;s=C4B23473C92FFB3A12C001CF020050B2"
+ style='width:372.75pt;height:273.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image010.jpg" o:title="u=2476489382,2247371634&amp;fm=173&amp;app=49&amp;f=JPEG?w=634&amp;h=466&amp;s=C4B23473C92FFB3A12C001CF020050B2"/>
+</v:shape><![endif]--><![if !vml]><img width="497" height="365" src="熵%20信息熵.files/image011.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2476489382,2247371634&amp;fm=173&amp;app=49&amp;f=JPEG?w=634&amp;h=466&amp;s=C4B23473C92FFB3A12C001CF020050B2" v:shapes="图片_x0020_7"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">增加第三个概率为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的结果并不会有什么不同</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">给定</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> A </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> B </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">两个选择，你会选哪个？可能正确的反应应该是耸耸肩或白<span class="GramE">个</span>眼。第三个结果的加入并没有增加或减少这个游戏的不确定性。谁关心到底是用</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">A</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">还是</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">B</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">呀，因为用<span class="GramE">哪个都是</span>一样的。</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">熵的公式也满足这个性质：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">即，增加一个概率为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的结果，并不会影响对于不确定性的度量。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">基本性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">4</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：不确定性的度量应该是连续的</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">最后一个基本性质是连续性。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">连续性的最直观的解释就是没有断开或者空洞。更精确的解释是：输出（在我们的场景下是不确定性）中<span class="GramE">任意小</span>的变化，都可以由输入（概率）中足够小的变化得到。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对数函数在定义域上每个点都是连续的。在子集上有限数量函数的和和乘积也是连续的。由此可能得出熵函数也是连续的。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">唯一性定理</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span class="SpellE"><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">Khinchin</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1957</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）证明，满足上述四种基本属性的唯一函数<span class="GramE">族具有</span>如下形式：</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1030" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=248563919,1262067357&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=152&amp;s=7AAE3462C53CC0215C5534C60000E0B1"
+ style='width:338.25pt;height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image012.jpg" o:title="u=248563919,1262067357&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=152&amp;s=7AAE3462C53CC0215C5534C60000E0B1"/>
+</v:shape><![endif]--><![if !vml]><img width="451" height="107" src="熵%20信息熵.files/image013.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=248563919,1262067357&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=152&amp;s=7AAE3462C53CC0215C5534C60000E0B1" v:shapes="图片_x0020_6"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">其中</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">λ</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">是正常数。</span><span class="SpellE"><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:#333333;mso-font-kerning:0pt">Khinchin</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">称之为唯一性定理。将</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">λ</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">设为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，并使用以</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">为底的对数就得到了香农熵。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">重申一下，使用<span class="GramE">熵</span>作为不确定性度量是因为它具有我们期望的属性，并且是从满足上面提到的四个属性的函数族中做出的很自然的选择。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">其他属性</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">除了上述用于</span><span class="SpellE"><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">Khinchin</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的唯一性定理中的四个基本属性，<span class="GramE">熵还具有</span>一些其他的性质，下面就介绍其中的一些。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">5</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：具有更多可能结果的均匀分布有更大的不确定性</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">比如你可以在抛硬币试验和抛骰子试验中做出一个选择，如果硬币正面朝上或者骰子</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">那面朝上就算赢。你会选择那个试验？如果你想最大化收入，肯定会选择硬币。如果只是想体验下不确定性，那可能就会选骰子。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1029" type="#_x0000_t75" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1377836579,2988079987&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=461&amp;s=E4B23473C537E83A42C501D10200C0B2"
+ style='width:360.75pt;height:260.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image014.jpg" o:title="u=1377836579,2988079987&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=461&amp;s=E4B23473C537E83A42C501D10200C0B2"/>
+</v:shape><![endif]--><![if !vml]><img width="481" height="347" src="熵%20信息熵.files/image015.jpg" alt="说明: https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1377836579,2988079987&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=461&amp;s=E4B23473C537E83A42C501D10200C0B2" v:shapes="图片_x0020_5"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span class="GramE"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">随着等</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">概率结果的数量的增加，不确定性的度量也应该增加。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">这正是<span class="GramE">熵</span>所做的：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 1/6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">&gt; H</span><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0.5</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> 0.5</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">一般来说，</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">L(k)</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">为具有</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">K</span><span class="GramE"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">个</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">结果的均匀分布的熵，我们能够得到：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">m&gt;n</span><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，有</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">6</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：事件拥有非负的不确定性</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">你知道什么是负的不确定性吗？反正我也不知道。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">对于一个用户友好的不确定性度量来说，无论输入是什么，应该总会返回一个非负的结果。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">熵的公式同样满足这个性质，我们来看一下公式：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1028" type="#_x0000_t75" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3516375622,666767911&amp;fm=173&amp;app=49&amp;f=JPEG?w=590&amp;h=207&amp;s=7AAC3C6287B451801C7590CE0000A0B1"
+ style='width:442.5pt;height:155.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image016.jpg" o:title="u=3516375622,666767911&amp;fm=173&amp;app=49&amp;f=JPEG?w=590&amp;h=207&amp;s=7AAC3C6287B451801C7590CE0000A0B1"/>
+</v:shape><![endif]--><![if !vml]><img width="590" height="207" src="熵%20信息熵.files/image016.jpg" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3516375622,666767911&amp;fm=173&amp;app=49&amp;f=JPEG?w=590&amp;h=207&amp;s=7AAC3C6287B451801C7590CE0000A0B1" v:shapes="图片_x0020_4"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">概率是定义在</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0-1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">的范围内的，因此是非负的。所以概率的对数是负的。概率乘概率的对数不会改变符号。因此求和之后应该是负的，最终负负得正。所以对于所有的输入，<span class="GramE">熵都是非</span>负的。</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">7</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：有确定结果的事件具有</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">0</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">不确定性</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">假设你拥有一个魔法硬币，无论你怎么抛，硬币总是正面朝上。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1027" type="#_x0000_t75" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=175666129,3945845476&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=510&amp;s=E49224734137C03A8AE4245A020090F2"
+ style='width:480pt;height:382.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image017.jpg" o:title="u=175666129,3945845476&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=510&amp;s=E49224734137C03A8AE4245A020090F2"/>
+</v:shape><![endif]--><![if !vml]><img width="640" height="510" src="熵%20信息熵.files/image017.jpg" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=175666129,3945845476&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=510&amp;s=E49224734137C03A8AE4245A020090F2" v:shapes="图片_x0020_3"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">你会怎么量化这个魔法硬币的不确定性，或者其他情况下有确定结果的事件的不确定性？这中情况下就没有不确定性，所以结果也很自然，不确定性为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">熵的定义也满足这个性质。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">假设结果</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">i</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">一定会发生，即</span><span class="SpellE"><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:#333333;mso-font-kerning:0pt">p_i</span></span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">=1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，</span><span style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">所以</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H(X)</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">为：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">即，确定事件的熵为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">性质</span></b><b><span lang="EN-US" style="font-size:13.5pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:black;mso-font-kerning:0pt">8</span></b><b><span style="font-size:
+13.5pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:black;mso-font-kerning:0pt">：调转参数顺序没有影响</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">这是另一个显而易见的理想性质。考虑两种情况，第一个，抛硬币正面朝上的概率和背面朝上的概率分别为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">80%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">20%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。第二个情况里概率正好相反：正面朝上和背面朝上的概率分别为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">20%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">80%</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_i1026" type="#_x0000_t75" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4110456634,3709134009&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=471&amp;s=EDA234731137583B02C100DA0200E032"
+ style='width:480pt;height:353.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image018.jpg" o:title="u=4110456634,3709134009&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=471&amp;s=EDA234731137583B02C100DA0200E032"/>
+</v:shape><![endif]--><![if !vml]><img width="640" height="471" src="熵%20信息熵.files/image018.jpg" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4110456634,3709134009&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=471&amp;s=EDA234731137583B02C100DA0200E032" v:shapes="图片_x0020_2"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">两种抛硬币试验都有相同的熵，即</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">H(0.8, 0.2) = H(0.2, 0.8)</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">更通用的形式，对于<span class="GramE">个</span>结果的试验，我们有：</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" align="left" style="text-align:left;mso-pagination:widow-orphan;
+background:white"><span lang="EN-US" style="font-size:9.0pt;font-family:" arial","sans-serif"; mso-fareast-font-family:宋体;color:black;mso-font-kerning:0pt;mso-no-proof:yes"><!--[if gte vml 1]><v:shape
+ id="图片_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1737503119,2511097307&amp;fm=173&amp;app=49&amp;f=JPEG?w=572&amp;h=122&amp;s=4AA03C62C552EC395C5535C60000C0B1"
+ style='width:429pt;height:91.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="熵%20信息熵.files/image019.jpg" o:title="u=1737503119,2511097307&amp;fm=173&amp;app=49&amp;f=JPEG?w=572&amp;h=122&amp;s=4AA03C62C552EC395C5535C60000C0B1"/>
+</v:shape><![endif]--><![if !vml]><img width="572" height="122" src="熵%20信息熵.files/image019.jpg" alt="说明: https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1737503119,2511097307&amp;fm=173&amp;app=49&amp;f=JPEG?w=572&amp;h=122&amp;s=4AA03C62C552EC395C5535C60000C0B1" v:shapes="图片_x0020_1"><![endif]></span><span lang="EN-US" style="font-size:9.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:black; mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:19.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">实际上这对于有任何数量结果的试验都适用。我们可以以任意的方式调整参数的顺序，而所有的结果都是一样的。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><b><span style="font-size:13.5pt;font-family:
+宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:black;mso-font-kerning:0pt">总结</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">回顾一下，香农熵是一种不确定性的度量。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">它被广泛的适用，因为它满足了我们想要的一些标准（同时也是因为我们生活中充满了不确定性）。唯一性定理告诉我们，只有一个函数<span class="GramE">族具有</span>我们想要的四种基本性质。香农熵是这个函数族的一个很自然的选择。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">熵的性质有（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">1</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）对于均匀分布有最大的熵；（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">2</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）对于独立<span class="GramE">事件熵是可加</span>的；（</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt">3</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:
+Arial;color:#333333;mso-font-kerning:0pt">）<span class="GramE">具有非零概率</span>的结果数量增加，熵也会增加；（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">4</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）连续性；（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">5</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）非负性；（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">6</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）确定事件的熵为</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">0</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">；（</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt">7</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">）参数排列不变性。</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:16.5pt;line-height:18.0pt;mso-pagination:
+widow-orphan;background:white"><span lang="EN-US" style="font-size:12.0pt;
+font-family:" arial","sans-serif";mso-fareast-font-family:宋体;color:#333333; mso-font-kerning:0pt">via <span class="SpellE">TowardsDatascience</span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">，雷锋网</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"> AI </span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#333333;mso-font-kerning:0pt">科技评论编译</span><span lang="EN-US" style="font-size:12.0pt;font-family:" arial","sans-serif";mso-fareast-font-family: 宋体;color:#333333;mso-font-kerning:0pt"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/07/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">YG201506</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YG201506</span>
+
+  
+
+  
+</div>
+
+
+  <!-- <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div> -->
+
+
+
+ <!--   <span class="post-meta-divider">{ next_url('http://yg2015062.gz01.bdysite.com/public/', 'NexT.' + theme.scheme, {class: 'theme-link'}</span>  -->
+
+
+
+  <div class="theme-info">  <a href="http://yg2015062.gz01.bdysite.com/public/" class="theme-link" rel="noopener" target="_blank">MyPrivateData</a> </div> 
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xwISP425KbMS36mtEJ5fGeBO-gzGzoHsz',
+    appKey: 'QlsaTh3P64htgl9uxapS9gCM',
+    placeholder: 'Just go go',
+    avatar: 'hide',
+    meta: guest,
+    pageSize: '2' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
